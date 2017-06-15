@@ -1,18 +1,102 @@
-body {
+/*style for grocery.html*/
+.dropdown {
+
+     margin: 30px;
+
+   }
+.btn {
+  background-color: #4d6376;
+  border: #fff solid 2px;
+  margin-left: 100px;
+}
+
+h2 {
+  text-align: center;
+  color: #2a201e;
+  letter-spacing: 0.5em;
+  font-size: 50px;
+  margin-bottom: 50px;
+  font-family: Papyrus;
+}
+
+.container {
+  background-image: url("assets/images/kitchenblur.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+li button {
+  background-color: #fff;
+  color: #4d6376;
+  border: none;
+  font-family: 
 
 
 }
+
+li button:hover {
+    
+    color: red;  
+
+}
+
+#add-items {
+
+  border-radius: 4px;
+  background-color: #4d6376;
+  color: #fff;
+
+}
+
+#add-items:hover {
+  color:red;
+}
+.items {
+  color: #4d6376;
+}
+
+footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+span.glyphicon {
+   width: 50px; 
+   height:20px;
+
+}
+/*style for index.html*/
 
 h1 {
    color: #000026;
    text-align: center;
 }
 
-#box1 {
-	margin-left: 15px;
-	margin-top: -15px;
-}
+.text1 {
+	background-color: #b4bcc0;
+  width: 300px;
+  height:200px;
+  float: right;
+  margin-top: 100px;
+  }
 
+.text2 {
+  background-color: #b4bcc0;
+  width: 300px;
+  height:200px;
+  float: left;
+  margin-top: 40px;
+  }
+.text3 {
+  background-color: #b4bcc0;
+  width: 300px;
+  height:200px;
+  float: right;
+  margin-top: 40px;
+  }
 .row {
 
 	margin: 50px;
@@ -27,7 +111,11 @@ footer {
 .navbar {
       margin-bottom: 0;
       border-radius: 0;
-    }    
+    }   
+
+    .buttonText {
+      color: #000026;
+    } 
 
     footer {
       background-color: #555;
@@ -35,8 +123,42 @@ footer {
       padding: 15px;
     }
 
+#customBtn {
+      display: inline-block;
+      background: white;
+      color: #444;
+      width: 190px;
+      border-radius: 5px;
+      border: thin solid #888;
+      box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;
+    }
+    #customBtn:hover {
+      cursor: pointer;
+    }
+    span.label {
+      
+      font-weight: normal;
+      font-size: 16px;
+    }
+    span.icon {
+      background: url('../images/Google-Logo.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+    }
+    span.buttonText {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 42px;
+      padding-right: 42px;
+      font-size: 16px;
+      font-weight: bold;
+      /* Use the Roboto font that is loaded in the <head> */
+      font-family: 'Roboto', sans-serif;
+    }
     
-
 
     @media screen and (max-width: 767px) {
       .sidenav {
