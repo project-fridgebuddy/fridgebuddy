@@ -8,6 +8,33 @@
 </head>
 <body>
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+    
+        <a href="index.html" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <div class="container">
   <h2>Grocery List</h2>
   <div class="row">   
@@ -190,9 +217,9 @@
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sauces/Oils
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><button type="button" name="item">BBQ Sauce</button></li>
-      <li><button type="button" name="item">Olive Oil</button></li>
-      <li><button type="button" name="item">Soy Sauce</button></li>
+      <li><button type="button" class="item">BBQ Sauce</button></li>
+      <li><button type="button" class="item">Olive Oil</button></li>
+      <li><button type="button" class="item">Soy Sauce</button></li>
       <form>
       <span id="food-item"><input id="items" type="text" ><input id="add-items" value="Add Item" type="submit"></span>
 </form>
@@ -209,9 +236,9 @@
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Condiments
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><button type="button" name="item"></button>Peanut Butter</li>
-      <li><button type="button" name="item"></button>Honey</li>
-      <li><button type="button" name="item"></button>Mustard</li>
+      <li><button type="button" class="item">Peanut Butter</button></li>
+      <li><button type="button" class="item">Honey</button></li>
+      <li><button type="button" class="item">Mustard</button></li>
       <form>
       <span id="food-item"><input id="items" type="text" ><input id="add-items" value="Add Item" type="submit"></span>
 </form>
@@ -224,9 +251,9 @@
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Beverages 
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><button type="button" name="item">Coffee</li>
-      <li><button type="button" name="item">Beer</li>
-      <li><button type="button" name="item">Juice</li>
+      <li><button type="button" class="item">Coffee</button></li>
+      <li><button type="button" class="item">Beer</button></li>
+      <li><button type="button" class="item">Juice</button></li>
       <form>
       <span id="food-item"><input id="items" type="text" ><input id="add-items" value="Add Item" type="submit"></span>
 </form>
@@ -239,9 +266,9 @@
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Snacks
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><button type="button" name="item">Nuts</button></li>
-      <li><button type="button" name="item">Hummus</button></li>
-      <li><button type="button" name="item">Popcorn</button></li>
+      <li><button type="button" class="item">Nuts</button></li>
+      <li><button type="button" class="item">Hummus</button></li>
+      <li><button type="button" class="item">Popcorn</button></li>
       <form>
       <span id="food-item"><input id="items" type="text" ><input id="add-items" value="Add Item" type="submit"></span>
 </form>
@@ -254,7 +281,82 @@
 </div>
 
 <div class="row" id="fridge-items"></div>
+<footer class="container-fluid text-center">
+ <span class="copyright">&copy;</span>2017 UC Berkeley
 
+</footer>
+
+<style type="text/css">
+   .dropdown {
+
+     margin: 30px;
+
+   }
+.btn {
+  background-color: #4d6376;
+  border: #fff solid 2px;
+  margin-left: 100px;
+}
+
+h2 {
+  text-align: center;
+  color: #2a201e;
+  letter-spacing: 0.5em;
+  font-size: 50px;
+  margin-bottom: 50px;
+  font-family: Papyrus;
+}
+
+.container {
+  background-image: url("assets/images/kitchenblur.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+li button {
+  background-color: #fff;
+  color: #4d6376;
+  border: none;
+  font-family: 
+
+
+}
+
+li button:hover {
+    
+    color: red;  
+
+}
+
+#add-items {
+
+  border-radius: 4px;
+  background-color: #4d6376;
+  color: #fff;
+
+}
+
+#add-items:hover {
+  color:red;
+}
+.items {
+  color: #4d6376;
+}
+
+footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+span.glyphicon {
+   width: 50px; 
+   height:20px;
+
+}
+</style>
 
 
 
