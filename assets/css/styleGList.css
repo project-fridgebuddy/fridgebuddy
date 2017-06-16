@@ -1,0 +1,74 @@
+.dropdown {
+
+     margin: 30px;
+
+   }
+.btn {
+  background-color: #4d6376;
+  border: #fff solid 2px;
+  margin-left: 50px;
+}
+
+h2 {
+  text-align: center;
+  color: #2a201e;
+  letter-spacing: 0.5em;
+  font-size: 50px;
+  margin-bottom: 50px;
+  font-family: Papyrus;
+}
+
+.container {
+  background-image: url("../images/kitchenblur.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+li button {
+  background-color: #fff;
+  color: #4d6376;
+  border: none;
+  font-family: 
+
+
+}
+
+li button:hover {
+    
+    color: red;  
+
+}
+
+#add-items {
+
+  border-radius: 4px;
+  background-color: #4d6376;
+  color: #fff;
+
+}
+
+#add-items:hover {
+  color:red;
+}
+.items {
+  color: #4d6376;
+}
+
+footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+span.glyphicon {
+   width: 50px; 
+   height:20px;
+
+}
+
+.listButton {
+  margin-top: -600px;
+
+}
