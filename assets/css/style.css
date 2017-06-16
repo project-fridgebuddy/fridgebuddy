@@ -20,7 +20,7 @@ h2 {
 }
 
 .container {
-  background-image: url("assets/images/kitchenblur.png");
+  background-image: url("../images/kitchenblur.png");
 
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,7 +69,10 @@ span.glyphicon {
 
 }
 /*style for index.html*/
+.mySlides {
 
+  display: none;
+}
 h1 {
    color: #000026;
    text-align: center;
@@ -158,6 +161,7 @@ footer {
       /* Use the Roboto font that is loaded in the <head> */
       font-family: 'Roboto', sans-serif;
     }
+
     
 
     @media screen and (max-width: 767px) {
