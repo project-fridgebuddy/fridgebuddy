@@ -37,7 +37,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="items-container">
         <h2>Grocery List</h2>
         <div class="row">
             <div class="col-md-3">
@@ -280,37 +280,45 @@
             
             <div class="col-md-3">
               <div class="col-md-4">                                       
-  <div  class="dropdown">
-    <button id="listButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Grocery List
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" id="fridge-items">
-    </ul>
-  </div>
+                  <div  class="dropdown">
+                    <button id="listButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Grocery List
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="fridge-items">
+                    </ul>
+                  </div>
   
-</div>
-            </div>
-            
-        </div>
-        <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <button class="diet" type="button">Vegan</button>
-            <button class="diet" type="button">Vegetarian</button>
-            <button class="diet" type="button">Carnivore</button>
-            <button class="diet" type="button">Pescatarian</button>
-            <div class="col-md-2"></div>
+              </div>
+            </div>  
         </div>
 
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <button class="recipe-button diet" type="button">Vegan</button>
+                    <button class="recipe-button diet" type="button">Vegetarian</button>
+                    <button class="recipe-button diet" type="button">Carnivore</button>
+                    <button class="recipe-button diet" type="button">Pescatarian</button>
+                    <div class="col-md-2"></div>
+                </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="recipe-items"></div>
     </div>
 
     <footer class="container-fluid text-center">
+<<<<<<< HEAD
         <span class="copyright">&copy;</span>2017 FridgeBuddy
 
+=======
+        <span class="copyright">&copy;</span>2017 UC Berkeley
+>>>>>>> 6d30813664f3ec36588f5af6ad59d8ef4556c8c1
     </footer>
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="assets/js/firebase.js" type="text/javascript"></script>
+    <script src="assets/js/api.js" type="text/javascript"></script>
 
 
 </body>
