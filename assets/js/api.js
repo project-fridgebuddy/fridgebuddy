@@ -1,6 +1,7 @@
 $(document).ready(function() { 
+   $("#recipe-container").hide();
 	$(document).on('click', '.recipe-button', function(event) {
-    console.log('click');
+   
       // Keeps page from reloading //
       event.preventDefault();
 
@@ -24,5 +25,6 @@ $(document).ready(function() {
       });
 
       $("#items-container").hide();
+      $("#recipe-container").show();
     });
 });
