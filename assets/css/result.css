@@ -4,6 +4,7 @@
 	height: 600px;
 	background-repeat: no-repeat;
     background-size: 100% 100%;
+    margin-top: -20px;
 }
 
 h1 {
@@ -23,7 +24,11 @@ h2 {
 	font-size: 60px;
 	font-weight: bolder;
 	letter-spacing: 0.8em;
-}    
+	padding-top: 30px;
+} 
+.container {
+	background-color: #e8e8e8; 
+}   
 
 /*#recipes {
 	background-color: #e8e8e8;
@@ -36,7 +41,7 @@ h2 {
 
 }*/
 
-.bottomHalf {
+/*.bottomHalf {
 	background-color: #e8e8e8;
 	background-size: 100% 100%;
 
@@ -44,9 +49,10 @@ h2 {
 #midText {
 	padding-top-top: 30px;
 	margin-bottom: 30px;
-}
+}*/
 
 #recipes {
 	margin-left: 25px;
 	padding-bottom: 30px;
+	padding-top: 40px;
 }
