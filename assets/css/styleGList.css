@@ -1,13 +1,14 @@
 .dropdown {
 
-     margin: 30px;
+     /*margin: 30px;*/
+     margin: 2px;
 
    }
 .btn {
   background-color: #4d6376;
   border: #fff solid 2px;
-  margin-left: 50px;
-  width: 130px;
+  margin: 0 auto;
+  width: 150px;
   height: 50px;
   
 }
@@ -19,7 +20,7 @@ h2 {
   font-size: 50px;
   margin-bottom: 50px;
   font-family: Papyrus;
-  width: 130px;
+  /*width: 130px;*/
   height: 50px;
 }
 
@@ -73,7 +74,7 @@ span.glyphicon {
 }
 
 #listButton {
-  margin-top: -400px !important;
+  /*margin-top: -400px !important;*/
   background-color: #6b2f23 !important;
 
 }

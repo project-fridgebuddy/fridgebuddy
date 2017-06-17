@@ -36,7 +36,7 @@ $(document).ready(function() {
 
     var item = snapshot.val().item;
 
-    var newRow = $('<li>').attr('id', keyID);
+    var newRow = $('<li class="item">').attr('id', keyID);
     newRow.append($('<p class="text-center">').text(item));
 
     $('#fridge-items').append(newRow);
