@@ -36,12 +36,29 @@ $(document).ready(function() {
 
     var item = snapshot.val().item;
 
-    var newRow = $('<li class="item">').attr('id', keyID);
+    var newRow = $('<li class="item remove-item">').attr('id', keyID);
     newRow.append($('<p class="text-center">').text(item));
 
     $('#fridge-items').append(newRow);
 
   });
+
+  
+  //remove train on click
+    $("body").on("click", ".remove-button", function(){
+        //remove data from firebase associated with this buttons key
+         database.ref().child($(this).attr('id', keyID)).remove();
+    });
+    //watcher for child removed
+    database.ref().on("child_removed", function(snapshot) {
+        //save the key as a variable
+        var keyID = snapshot.key;
+        //remove row with id that matches key of child that was removed
+        $("#"+keyID).remove();
+    });
+
+
+
 });
 
 

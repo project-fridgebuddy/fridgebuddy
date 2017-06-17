@@ -24,6 +24,19 @@ $(document).ready(function() {
       	}
       });
 
+      //ajax for second API providing random cocktail with recipies
+      var drinkURL ="http://www.thecocktaildb.com/api/json/v1/1/random.php"
+
+      $.ajax({
+        url: drinkURL,
+        method: "GET"
+      }).done (function(response){
+        console.log(response)
+        for (var i = 0; i < response.drinks.length; i++) {
+          $("#drink-items").append('<div class="recipe-name text-center col-md-12"><h3>' + response.drinks[i].strDrink +'<br><img style="width: 300px;" src="' + response.drinks[i].strDrinkThumb + '">');
+        }
+      })
+
       $("#items-container").hide();
       $("#recipe-container").show();
     });
