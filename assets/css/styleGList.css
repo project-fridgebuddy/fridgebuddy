@@ -4,6 +4,20 @@
      margin: 2px;
 
    }
+
+.dropdown-menu {
+  width: 150px !important;
+}
+
+input#items {
+  width: 145px !important;
+  margin: 4px;
+}
+
+input#add-items {
+  margin: 4px;
+}
+
 .btn {
   background-color: #4d6376;
   border: #fff solid 2px;
