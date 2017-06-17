@@ -25,7 +25,7 @@ $(document).ready(function() {
       });
 
       //ajax for second API providing random cocktail with recipies
-      var drinkURL ="http://www.thecocktaildb.com/api/json/v1/1/random.php"
+      var drinkURL ="https://www.thecocktaildb.com/api/json/v1/1/random.php"
 
       $.ajax({
         url: drinkURL,
