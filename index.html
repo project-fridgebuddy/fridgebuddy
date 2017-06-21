@@ -43,16 +43,39 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-                <a class="navbar-brand" href="#">Logo</a>
+                 <img class="brandLogo" src="assets/images/logo.jpg" width="80" height="60">
             </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="grocerylist.html">My Grocery List</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="grocerylist.html">My Grocery List</a></li>
+
+
+                </ul>
+                <div class="dropdown">
+  <button class="dropbtn">Grocery Delivery</button>
+  <div class="dropdown-content">
+    <a href="https://www.instacart.com/" target="_blank">Instacard</a>
+    <a href="https://www.goodeggs.com/sfbay/home/step/zip" target="_blank">Good Eggs</a>
+    <a href="https://shop.safeway.com/ecom/home" target="_blank">Safeway</a>
+  </div>
+</div>
+                <!--<div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Grocery Delivery
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                    </ul>
+                </div>-->
+                <ul class="nav navbar-nav navbar-right">
+
                     <div id="gSignInWrapper">
                         <button id="login"></button>
                         <!-- <span class="label">Sign in with:</span>
@@ -65,67 +88,35 @@
             </div>
         </div>
     </nav>
-
-    <div class="container-fluid text-center">
-
-        <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Grocery Delivery
-    <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://www.instacart.com/" target="_blank">Instacard</a></li>
-                        <li><a href="https://www.goodeggs.com/sfbay/home/step/zip" target="_blank">Good Eggs</a></li>
-                        <li><a href="https://shop.safeway.com/ecom/home" target="_blank">Safeway</a></li>
-                    </ul>
-                </div>
-               
-        <div class="col-md-8 text-left">
-
-            <div class="row" id="box1">
-                <div class="col-md-6">
-                    <img src="assets/images/grocery.png" class="img-thumbnail" width="450" height="500">
-                </div>
-                <div class="col-md-6">
-                    <p class="text1">TEXT GOES HERE</p>
-                </div>
-            </div>
-
-            <div class="row" id="box2">
-                <div class="col-md-6">
-                    <p class="text2">TEXT GOES HERE</p>
-                </div>
-                <div class="col-md-6">
-                    <img src="assets/images/cooking.jpeg" class="img-thumbnail" width="650" height="500">
-                </div>
-            </div>
-
-            <div class="row" id="box3">
-                <div class="col-md-6">
-                    <img src="assets/images/meal.jpg" class="img-thumbnail" width="650" height="500">
-                </div>
-                <div class="col-md-6">
-                    <p class="text3">TEXT GOES HERE</p>
-                </div>
+    <div class="row">
+        <div class="thumbnail text-center">
+            <img class="mySlides" src="assets/images/03.jpeg" width="800" height="500">
+            <div class="caption">
+                <p>Log in Your groceies with just a click.</p>
             </div>
         </div>
-        <div class="col-sm-2 sidenav">
-            <img class="mySlides" src="assets/images/cake.png" width="400" height="500">
-            <img class="mySlides" src="assets/images/bike.png" width="400" height="500">
-            <img class="mySlides" src="assets/images/ramen.png" width="400" height="500">
-
-
+        <div class="thumbnail text-center">
+            <img class="mySlides" src="assets/images/cooking.jpeg" width="800" height="500">
+            <div class="caption">
+                <p>Pick your dietary preference, get recipes based on what your have in your grocery list.
+                </p>
+            </div>
         </div>
+        <div class="thumbnail text-center">
+            <img class="mySlides" src="assets/images/04.jpeg" width="800" height="500">
+            <div class="caption">
+                <p>Prepare and enjoy your meal.</p>
+            </div>
+        </div>
+
     </div>
 
 
     <footer class="container-fluid text-center">
-        <span class="copyright">&copy;</span>2017 UC Berkeley
+        <span class="copyright">&copy;</span>2017 FridgeBuddy
 
     </footer>
 
-   <!--  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript" src="assets/javascript/app.js"></script> -->
 
 </body>
 
