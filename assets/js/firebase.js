@@ -35,7 +35,7 @@ $(document).ready(function() {
   $(".diet").on('click', function(event){
 
     if (fridgeItems.length == 0){
-      alert("fuck off with your bullshit")
+      alert("You must add items to your list")
       return;
     }
 
@@ -107,7 +107,7 @@ $(document).ready(function() {
   });
 
   
-  //remove train on click
+  //remove on click
     $("body").on("click", ".remove-button", function(){
         //remove data from firebase associated with this buttons key
          database.ref().child($(this).attr('id', keyID)).remove();
@@ -204,15 +204,15 @@ $(document).ready(function() {
           console.log(row.val())
           if (window.user.uid === row.val().user_id){  
 
-            var fuckingShitInMyFridge = row.val().items
+            var inFridge = row.val().items
             
             window.user.row_id = row.key
 
             $("#fridge-items").empty();
 
-            fuckingShitInMyFridge.forEach(function(shit){
+            inFridge.forEach(function(things){
               $("#fridge-items").append(
-                $("<li>").append(shit)
+                $("<li>").append(things)
               )
             });
           }          
