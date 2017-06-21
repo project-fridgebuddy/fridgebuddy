@@ -22,8 +22,18 @@ p {
     color: black;
     
 }
+
+#login {
+    margin-top: 16px !important;
+}
+
+.mySlides {
+    width: 800px !important;
+    height: 500px !important;
+}
 .thumbnail {
     position: relative;
+    margin-bottom: 0 !important;
 }
 .caption {
     position: absolute;
