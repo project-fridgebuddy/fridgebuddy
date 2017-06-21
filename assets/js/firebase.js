@@ -1,12 +1,12 @@
 $(document).ready(function() {  
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAJ84k3KTHl-zpSiDgr6SuaVmwIMxnDrsg",
-    authDomain: "fridgebuddy-da9f0.firebaseapp.com",
-    databaseURL: "https://fridgebuddy-da9f0.firebaseio.com",
-    projectId: "fridgebuddy-da9f0",
-    storageBucket: "fridgebuddy-da9f0.appspot.com",
-    messagingSenderId: "781721156427"
+ var config = {
+    apiKey: "AIzaSyAimoqmQvNYxsxg4ES1u5TUQu490K75Dis",
+    authDomain: "project-test-d0d57.firebaseapp.com",
+    databaseURL: "https://project-test-d0d57.firebaseio.com",
+    projectId: "project-test-d0d57",
+    storageBucket: "project-test-d0d57.appspot.com",
+    messagingSenderId: "588756457296"
   };
 
   firebase.initializeApp(config);
@@ -15,20 +15,83 @@ $(document).ready(function() {
 
   var item = "";
 
-  //Add items to firebase
+  var fridgeItems = []
 
+  initApp(database);
+
+  //Add items to firebase
   $(".item").on('click', function(event) {
-   
     // Keeps page from reloading //
     event.preventDefault();
     
     item = this.innerText;
 
-    database.ref().push({
-      item: item
-    });
+    fridgeItems.push(item)
+    console.log(fridgeItems)
 
   });
+
+
+  $(".diet").on('click', function(event){
+
+    if (fridgeItems.length == 0){
+      alert("fuck off with your bullshit")
+      return;
+    }
+
+    var data = {
+      items: fridgeItems,
+      user_id: window.user.uid,
+      added_ts: moment().format('YYYY-MM-DD HH:mm:ss')
+    }
+
+    randomItems(fridgeItems);
+
+    buildURL(recipeItems);
+
+    pushUpdateData(data);
+  });
+
+
+  function pushUpdateData(data){
+    if (window.user.row_id){
+      var updates = {}
+
+      updates[window.user.row_id] = data
+
+      database.ref().update(updates)
+    } else {
+
+      window.user.row_id = database.ref().push(data).key
+    }
+  }
+
+
+  function randomItems(fridgeItems){  
+    if (fridgeItems.length <= 3){
+      return fridgeItems;
+    } 
+
+    var recipeItems = []
+
+    var random
+
+    for (var i = 1; i <= 3; i++){
+      random = Math.floor(Math.random()*fridgeItems.length);
+      recipeItems.push(fridgeItems[random]);
+      fridgeItems.splice(random, 1)
+    }
+
+    return recipeItems;
+    
+  }
+
+  //Pass value of button clicked to build constructed query url
+  function buildURL(recipeItems){
+    return "q=" + recipeItems.join("+")
+  }
+
+
 
   database.ref().on("child_added", function(snapshot) {
 
@@ -106,23 +169,22 @@ $(document).ready(function() {
     }
     
     //Called on page/window load to add listener to UI
-    function initApp() {
+    function initApp(database) {
       //Listens for state changes
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
-         
+            
+          window.user = user;      
+
           document.getElementById('login').textContent = 'Sign out';
+
+          getData(database);
+         
           
         } else {
           
+          window.user = null
+
           document.getElementById('login').textContent = 'Sign in with Google';
        
         }
@@ -134,6 +196,26 @@ $(document).ready(function() {
       document.getElementById('login').addEventListener('click', toggleSignIn, false);
     }
 
-    window.onload = function() {
-      initApp();
-    };
+    
+
+    function getData(database) {
+      database.ref().on('value', function(snapshot){
+        snapshot.forEach(function(row){
+          console.log(row.val())
+          if (window.user.uid === row.val().user_id){  
+
+            var fuckingShitInMyFridge = row.val().items
+            
+            window.user.row_id = row.key
+
+            $("#fridge-items").empty();
+
+            fuckingShitInMyFridge.forEach(function(shit){
+              $("#fridge-items").append(
+                $("<li>").append(shit)
+              )
+            });
+          }          
+        });        
+      });
+    }
