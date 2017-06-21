@@ -45,7 +45,9 @@ $(document).ready(function() {
       added_ts: moment().format('YYYY-MM-DD HH:mm:ss')
     }
 
-    randomItems(fridgeItems);
+    var recipeItems = randomItems(fridgeItems);
+
+    urlSyntax(recipeItems);
 
     buildURL(recipeItems);
 
@@ -82,13 +84,21 @@ $(document).ready(function() {
       fridgeItems.splice(random, 1)
     }
 
-    return recipeItems;
-    
+    return recipeItems;    
   }
 
+  function urlSyntax(recipeItems){
+  	recipeItems.toString();
+  	console.log(recipeItems)
+  	// var concatURL = recipeItems.replace(" ", "%20")
+  	// console.log(concatURL)
+  }
   //Pass value of button clicked to build constructed query url
   function buildURL(recipeItems){
-    return "q=" + recipeItems.join("+")
+    var builtURL = "https://api.edamam.com/search?app_id=c4f62b8d&app_key=e041d493f5b0aecd6933bbdf901cf840&from=1&to=5&q=" + recipeItems.join(",")
+    console.log(builtURL)
+    return builtURL;
+    
   }
 
 
