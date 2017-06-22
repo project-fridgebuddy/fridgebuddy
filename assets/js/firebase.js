@@ -26,8 +26,12 @@ $(document).ready(function() {
     
     item = this.innerText;
 
-    fridgeItems.push(item)
+    fridgeItems.push(item);
     console.log(fridgeItems)
+
+    database.ref().push({
+      item: item
+    });
 
   });
 
@@ -107,8 +111,8 @@ $(document).ready(function() {
 
     var item = snapshot.val().item;
 
-    var newRow = $('<li class="item remove-item">').attr('id', keyID);
-    newRow.append($('<p class="text-center">').text(item));
+    var newRow = $('<div class="item remove-item">').attr('id', keyID);
+    newRow.append($('<p class="text-center" style="font-size: 16px">').text(item));
 
     $('#fridge-items').append(newRow);
 
