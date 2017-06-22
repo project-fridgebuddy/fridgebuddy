@@ -47,8 +47,6 @@ $(document).ready(function() {
 
     var recipeItems = randomItems(fridgeItems);
 
-    urlSyntax(recipeItems);
-
     buildURL(recipeItems);
 
     pushUpdateData(data);
@@ -87,15 +85,15 @@ $(document).ready(function() {
     return recipeItems;    
   }
 
-  function urlSyntax(recipeItems){
-  	recipeItems.toString();
-  	console.log(recipeItems)
-  	// var concatURL = recipeItems.replace(" ", "%20")
-  	// console.log(concatURL)
-  }
+  // function urlSyntax(recipeItems){
+  // 	recipeItems.toString();
+  // 	console.log(recipeItems)
+  // 	// var concatURL = recipeItems.replace(" ", "%20")
+  // 	// console.log(concatURL)
+  // }
   //Pass value of button clicked to build constructed query url
   function buildURL(recipeItems){
-    var builtURL = "https://api.edamam.com/search?app_id=c4f62b8d&app_key=e041d493f5b0aecd6933bbdf901cf840&from=1&to=5&q=" + recipeItems.join(",")
+    var builtURL = "https://api.edamam.com/search?app_id=c4f62b8d&app_key=e041d493f5b0aecd6933bbdf901cf840&from=1&to=5&q=" + encodeURIComponent(recipeItems.join(','));
     console.log(builtURL)
     return builtURL;
     
