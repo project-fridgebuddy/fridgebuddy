@@ -26,17 +26,16 @@ $(document).ready(function() {
     
     item = this.innerText;
 
-    fridgeItems.push(item);
+    fridgeItems.push(item)
     console.log(fridgeItems)
-
-    database.ref().push({
-      item: item
-    });
 
   });
 
 
   $(".diet").on('click', function(event){
+
+  	dietRestriction = this.innerText
+  	console.log(dietRestriction)
 
     if (fridgeItems.length == 0){
       alert("You must add items to your list")
@@ -44,6 +43,7 @@ $(document).ready(function() {
     }
 
     var data = {
+      diet: dietRestriction,
       items: fridgeItems,
       user_id: window.user.uid,
       added_ts: moment().format('YYYY-MM-DD HH:mm:ss')
@@ -51,9 +51,11 @@ $(document).ready(function() {
 
     var recipeItems = randomItems(fridgeItems);
 
-    buildURL(recipeItems);
+    buildURL(recipeItems, dietRestriction);
 
     pushUpdateData(data);
+
+    ajaxCall(builtURL)
   });
 
 
@@ -89,18 +91,29 @@ $(document).ready(function() {
     return recipeItems;    
   }
 
-  // function urlSyntax(recipeItems){
-  // 	recipeItems.toString();
-  // 	console.log(recipeItems)
-  // 	// var concatURL = recipeItems.replace(" ", "%20")
-  // 	// console.log(concatURL)
-  // }
-  //Pass value of button clicked to build constructed query url
-  function buildURL(recipeItems){
-    var builtURL = "https://api.edamam.com/search?app_id=c4f62b8d&app_key=e041d493f5b0aecd6933bbdf901cf840&from=1&to=5&q=" + encodeURIComponent(recipeItems.join(','));
-    console.log(builtURL)
-    return builtURL;
-    
+  
+  function buildURL(recipeItems, dietRestriction){
+  	var builtURL = "https://api.edamam.com/search?app_id=c4f62b8d&app_key=e041d493f5b0aecd6933bbdf901cf840&from=1&to=5&q=" + encodeURIComponent(recipeItems.join(','));
+
+  	if (dietRestriction === "none"){
+  		console.log("3", builtURL)
+  	} else {
+  		builtURL += "&Health=" + dietRestriction
+        console.log(builtURL)
+  	}
+
+   }
+   
+
+
+  function ajaxCall(builtURL){
+  	console.log(builtURL)
+  	$.ajax({
+      url: builtURL,
+      method: "GET"
+    }).done(function(response){
+    	console.log(response)
+    })
   }
 
 
@@ -111,8 +124,8 @@ $(document).ready(function() {
 
     var item = snapshot.val().item;
 
-    var newRow = $('<div class="item remove-item">').attr('id', keyID);
-    newRow.append($('<p class="text-center" style="font-size: 16px">').text(item));
+    var newRow = $('<li class="item remove-item">').attr('id', keyID);
+    newRow.append($('<p class="text-center">').text(item));
 
     $('#fridge-items').append(newRow);
 
