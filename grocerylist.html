@@ -87,7 +87,7 @@
         </div>
     </nav>
 
-    <div class="container" id="items-container">
+    <div class="container" id="items-container" style="position:relative;">
         <h2>Grocery List</h2>
     <div class="row">
     <div class="col-lg-9">
@@ -340,19 +340,25 @@
     <!-- Container for List Items End -->
     </div>
         <div class="row">
+            <h2>Dietary Restrictions</h2>
             <div class="col-md-12">
-                <button class="recipe-button diet" type="button" style="float:right!important;">Find Recipes!</button>
+                <button class="recipe-button diet" type="button">vegan</button>
+                <button class="recipe-button diet" type="button">vegetarian</button>
+                <button class="recipe-button diet" type="button">gluten-free</button>
+                <button class="recipe-button diet" type="button">none</button>
             </div>
         </div>
-    </div>
+    
     <div id="recipe-container" class="container">
-     <h2>Recipes</h2>
-        <div class="row" id="recipe-items"></div>
-     <h2>Drink</h2>
-        <div class="row" id="drink-items"></div>
+        <h2>Recipes</h2>
+            <div class="row" id="recipe-items"></div>
+        <h2>Drink</h2>
+            <div class="row" id="drink-items"></div>
     </div>
 
-    <footer class="navbar-fixed-bottom container-fluid text-center">
+</div>
+
+    <footer class="navbar-fixed-bottom text-center" style="position:relative;">
 
         <span class="copyright">&copy;</span>2017 FridgeBuddy
 
