@@ -11,7 +11,7 @@
 #container-fluid {
     margin: 0 auto;
     max-width: 800px;
-    margin-top: 100px;
+    position: relative;
 }
 h1 {
     color: #000026;
@@ -81,6 +81,14 @@ footer {
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
+}
+
+.navbar-fixed-bottom {
+    bottom: 0;
+    margin-bottom: 0;
+    border-width: 1px 0 0;
+    position: relative;
+    clear: both;
 }
 
 /*.buttonText {
