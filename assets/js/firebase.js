@@ -68,7 +68,8 @@ $(document).ready(function() {
       }).done (function(response){
         console.log(response)
         for (var i = 0; i < response.drinks.length; i++) {
-          $("#drink-items").append('<div class="recipe-name text-center col-md-12"><h3>' + response.drinks[i].strDrink +'<br><img style="width: 300px;" src="' + response.drinks[i].strDrinkThumb + '">' + '<p>' + response.drinks[i].strInstructions + '</p>');
+          var thumb = response.drinks[i].strDrinkThumb.replace("http://", "https://")
+          $("#drink-items").append('<div class="recipe-name text-center col-md-12"><h3>' + response.drinks[i].strDrink +'<br><img style="width: 300px;" src="' + thumb + '">' + '<p>' + response.drinks[i].strInstructions + '</p>');
         }
       })
 
