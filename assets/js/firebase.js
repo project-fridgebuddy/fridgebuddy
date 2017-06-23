@@ -26,7 +26,7 @@ $(document).ready(function() {
     // Keeps page from reloading //
     event.preventDefault();
     
-    item = this.innerText;
+    item = this.innerText.toLowerCase();
 
     fridgeItems.push(item)
     console.log(fridgeItems)
@@ -66,7 +66,7 @@ $(document).ready(function() {
       }).done (function(response){
         console.log(response)
         for (var i = 0; i < response.drinks.length; i++) {
-          $("#drink-items").append('<div class="recipe-name text-center col-md-12"><h3>' + response.drinks[i].strDrink +'<br><img style="width: 300px;" src="' + response.drinks[i].strDrinkThumb + '">');
+          $("#drink-items").append('<div class="recipe-name text-center col-md-12"><h3>' + response.drinks[i].strDrink +'<br><img style="width: 300px;" src="' + response.drinks[i].strDrinkThumb + '">' + '<p>' + response.drinks[i].strInstructions + '</p>');
         }
       })
 
@@ -124,24 +124,14 @@ $(document).ready(function() {
       method: "GET"
     }).done(function(response){
     	for (var i = 0; i < response.hits.length; i++) {
-      		$("#recipe-items").append('<div class="recipe-name text-center col-md-4"><h3>' + response.hits[i].recipe.label +'<br><img src="' + response.hits[i].recipe.image + '">'); 
+      		$("#recipe-items").append('<div class="recipe-name text-center col-md-4"><h3>' + response.hits[i].recipe.label +'<br><img src="' + response.hits[i].recipe.image + '">' + '<p>' + response.hits[i].recipe.ingredientLines + '</p>'); 
       	}
+
+
     })
 
-  	
    }
    
-
-
-  // function ajaxCall(builtURL){
-  // 	console.log(builtURL)
-  // 	$.ajax({
-  //     url: builtURL,
-  //     method: "GET"
-  //   }).done(function(response){
-  //   	console.log(response)
-  //   })
-  // }
 
 
 
