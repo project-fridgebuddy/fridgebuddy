@@ -1,12 +1,14 @@
 $(document).ready(function() {  
+
+ $("#recipe-container").hide();
   // Initialize Firebase
  var config = {
-    apiKey: "AIzaSyAimoqmQvNYxsxg4ES1u5TUQu490K75Dis",
-    authDomain: "project-test-d0d57.firebaseapp.com",
-    databaseURL: "https://project-test-d0d57.firebaseio.com",
-    projectId: "project-test-d0d57",
-    storageBucket: "project-test-d0d57.appspot.com",
-    messagingSenderId: "588756457296"
+    apiKey: "AIzaSyAJ84k3KTHl-zpSiDgr6SuaVmwIMxnDrsg",
+    authDomain: "fridgebuddy-da9f0.firebaseapp.com",
+    databaseURL: "https://fridgebuddy-da9f0.firebaseio.com",
+    projectId: "fridgebuddy-da9f0",
+    storageBucket: "fridgebuddy-da9f0.appspot.com",
+    messagingSenderId: "781721156427"
   };
 
   firebase.initializeApp(config);
@@ -52,10 +54,25 @@ $(document).ready(function() {
     var recipeItems = randomItems(fridgeItems);
 
     buildURL(recipeItems, dietRestriction);
+    
 
     pushUpdateData(data);
 
-    ajaxCall(builtURL)
+    var drinkURL ="https://www.thecocktaildb.com/api/json/v1/1/random.php"
+
+      $.ajax({
+        url: drinkURL,
+        method: "GET"
+      }).done (function(response){
+        console.log(response)
+        for (var i = 0; i < response.drinks.length; i++) {
+          $("#drink-items").append('<div class="recipe-name text-center col-md-12"><h3>' + response.drinks[i].strDrink +'<br><img style="width: 300px;" src="' + response.drinks[i].strDrinkThumb + '">');
+        }
+      })
+
+     $("#items-container").hide();
+     $("#recipe-container").show();
+
   });
 
 
@@ -93,7 +110,7 @@ $(document).ready(function() {
 
   
   function buildURL(recipeItems, dietRestriction){
-  	var builtURL = "https://api.edamam.com/search?app_id=c4f62b8d&app_key=e041d493f5b0aecd6933bbdf901cf840&from=1&to=5&q=" + encodeURIComponent(recipeItems.join(','));
+  	var builtURL = "https://api.edamam.com/search?app_id=c4f62b8d&app_key=e041d493f5b0aecd6933bbdf901cf840&from=1&to=4&q=" + encodeURIComponent(recipeItems.join(','));
 
   	if (dietRestriction === "none"){
   		console.log("3", builtURL)
@@ -102,19 +119,29 @@ $(document).ready(function() {
         console.log(builtURL)
   	}
 
-   }
-   
-
-
-  function ajaxCall(builtURL){
-  	console.log(builtURL)
   	$.ajax({
       url: builtURL,
       method: "GET"
     }).done(function(response){
-    	console.log(response)
+    	for (var i = 0; i < response.hits.length; i++) {
+      		$("#recipe-items").append('<div class="recipe-name text-center col-md-4"><h3>' + response.hits[i].recipe.label +'<br><img src="' + response.hits[i].recipe.image + '">'); 
+      	}
     })
-  }
+
+  	
+   }
+   
+
+
+  // function ajaxCall(builtURL){
+  // 	console.log(builtURL)
+  // 	$.ajax({
+  //     url: builtURL,
+  //     method: "GET"
+  //   }).done(function(response){
+  //   	console.log(response)
+  //   })
+  // }
 
 
 
