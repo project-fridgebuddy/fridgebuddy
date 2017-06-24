@@ -69,7 +69,7 @@ $(document).ready(function() {
             console.log(response)
             for (var i = 0; i < response.drinks.length; i++) {
                 var thumb = response.drinks[i].strDrinkThumb.replace("http://", "https://")
-                $("#drink-items").append('<div class="recipe-name text-center col-md-12"><h3>' + response.drinks[i].strDrink + '<br><img style="width: 300px;" src="' + thumb + '">' + '<p>' + response.drinks[i].strInstructions + '</p>');
+                $("#drink-items").append('<div class="recipe-name text-center col-md-12"><h3>' + response.drinks[i].strDrink + '<br><img style="width: 300px;" src="' + thumb + '">' + '<p style="background-color: rgba(255, 255, 255, 0.6)">' + response.drinks[i].strInstructions + '</p>');
             }
         })
 
@@ -129,7 +129,7 @@ $(document).ready(function() {
         }).done(function(response) {
             for (var i = 0; i < response.hits.length; i++) {
                 $("#recipe-items").append('<div class="recipe-name text-center col-md-4"><h3>'
-                + response.hits[i].recipe.label + '<br><img src="' + response.hits[i].recipe.image + '">' + '<p>' 
+                + response.hits[i].recipe.label + '<br><img src="' + response.hits[i].recipe.image + '">' + '<p style="background-color: rgba(255, 255, 255, 0.6)">' 
                 + response.hits[i].recipe.ingredientLines + '</p>');
             }
 
